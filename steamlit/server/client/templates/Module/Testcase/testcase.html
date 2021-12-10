@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block Log %}
+
+{% if file_store %} 
+    <H1>Given Information</H1>
+    <br>
+    <table border="1" align="left">
+        {% for key, value in file_store.id_card_info.items() %}
+        <tr>
+                <th> {{ key }} </th>
+                <td> {{ value }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <H1 style="background-color:red;">Check Fraud Detection</H1>
+    <br>
+    <table border="1" align="left">
+        <tr>
+            <th>Risk level: </th>
+            <td>{{log_fraud["data"]["risk_level"] }}</td>
+        </tr>
+        <tr>
+            <th>Evaluation: </th>
+            <td>{{log_fraud["message"] }}</td>
+        </tr>
+    </table>
+{% else %}
+    <H1> Invalid ID Card image. Please use a better image</H1> 
+{% endif %}        
+
+{% endblock Log %}

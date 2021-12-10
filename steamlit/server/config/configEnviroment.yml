@@ -1,0 +1,11 @@
+minio_platform: lending-flatform
+minio_address: '192.168.18.49:9000'
+access_key: minioadmin
+minioPass: minioadmin
+minioSecure : false
+server_image_save : '../image_save'
+local_image_save : '../image_save'
+server: '/home/app'
+local: '../deploy_ocr_nic'
+redis_url: 'redis://127.0.0.1:6379'
+postgres_url: 'postgresql+psycopg2://postgres:gago3008@localhost:5432/postgres'

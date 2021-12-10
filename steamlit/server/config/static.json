@@ -1,0 +1,43 @@
+{
+    "API_NIC_IMG": {
+        "dict_column_rename": {
+            "value": "infors",
+            "images": "face_annotation",
+            "infors": {
+                "id": "id_number",
+                "name": "fullname",
+                "dob": "birth_date",
+                "nguyenquan": "birth_place",
+                "quoctich": "nationality",
+                "thuongtru": "residence",
+                "ngayhethan": "expired_date",
+                "gioitinh": "gender",
+                "dantoc": "ethnic"
+            }
+        },
+        "dict_column_delete": {
+            "value": [
+                "face"
+            ],
+            "confidence" : "delete"
+        }
+    },
+    "API_NIC_IMG_BEHIND": {
+        "dict_column_rename": {
+            "value": "infors",
+            "infors": {
+                "tongiao": "religion",
+                "dantoc": "folk",
+                "ngon_trai": "left_finger",
+                "dacdiem_nhandang": "characteristics",
+                "ngaycap": "issued_date",
+                "ngon_phai": "right_finger",
+                "chuky_dau": "signature",
+                "noicap" : "issued_place"
+            }
+        },
+        "dict_column_delete": {
+            "confidence" : "delete"
+        }
+    }
+}
