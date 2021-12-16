@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable */
 import { useEffect, useState } from "react";
 import TourApi from "../../../api/tour";
 import Table from "@mui/material/Table";
@@ -13,65 +13,62 @@ import SuiButton from "components/SuiButton";
 const TourTable = () => {
   const [tourValue, setTourValue] = useState([]);
 
-  const a = localStorage.getItem("role");
+  // const a = localStorage.getItem("role");
 
   // eslint-disable-next-line no-unused-vars
-  const getTour = async () => {
-    const tours = await TourApi.ListTour();
-    setTourValue(tours?.data?.data);
-  };
+  // const getTour = async () => {
+  //   const tours = await TourApi.ListTour();
+  //   setTourValue(tours?.data?.data);
+  // };
 
-  console.log("QUUY", tourValue);
+  // console.log("QUUY", tourValue);
   var tourRole = null;
 
-  useEffect(() => {
-    getTour();
-  }, []);
+  // useEffect(() => {
+  //   getTour();
+  // }, []);
 
   const button_action = () => {
-    var role = localStorage.getItem("role");
-    role = JSON.parse(role);
-    role = Object.entries(role);
-    console.log("role at tour: ---> ", role);
-
-    role.map(([key, value]) => {
-      if (key === "tour") {
-        tourRole = value;
-        return value;
-      }
-    });
-
-    try {
-      tourRole = Object.entries(tourRole);
-      let result = tourRole.map((item, key) => {
-        console.log("tour result item : -----> ", item[1]);
-        if (item[1] === "update") {
-          return (
-            <SuiButton variant="text" buttonColor="secondary">
-              Update
-            </SuiButton>
-          );
-        }
-        if (item[1] === "delete") {
-          return (
-            <SuiButton variant="text" buttonColor="secondary">
-              DELETE
-            </SuiButton>
-          );
-        }
-        if (item[1] === "show_tourdetail") {
-          return (
-            <SuiButton variant="text" buttonColor="secondary">
-              Show Tour Detail
-            </SuiButton>
-          );
-        }
-      });
-
-      return result;
-    } catch {
-      return null;
-    }
+    // var role = localStorage.getItem("role");
+    // role = JSON.parse(role);
+    // role = Object.entries(role);
+    // console.log("role at tour: ---> ", role);
+    // role.map(([key, value]) => {
+    //   if (key === "tour") {
+    //     tourRole = value;
+    //     return value;
+    //   }
+    // });
+    // try {
+    //   tourRole = Object.entries(tourRole);
+    //   let result = tourRole.map((item, key) => {
+    //     console.log("tour result item : -----> ", item[1]);
+    //     if (item[1] === "update") {
+    //       return (
+    //         <SuiButton variant="text" buttonColor="secondary">
+    //           Update
+    //         </SuiButton>
+    //       );
+    //     }
+    //     if (item[1] === "delete") {
+    //       return (
+    //         <SuiButton variant="text" buttonColor="secondary">
+    //           DELETE
+    //         </SuiButton>
+    //       );
+    //     }
+    //     if (item[1] === "show_tourdetail") {
+    //       return (
+    //         <SuiButton variant="text" buttonColor="secondary">
+    //           Show Tour Detail
+    //         </SuiButton>
+    //       );
+    //     }
+    //   });
+    //   return result;
+    // } catch {
+    //   return null;
+    // }
   };
 
   const showListTourDetail = (item) => {

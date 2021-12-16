@@ -12,7 +12,7 @@ Coded by www.creative-tim.com
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-
+/*eslint-disable */
 import { useState, useEffect, useMemo } from "react";
 
 // react-router components
@@ -66,16 +66,16 @@ export default function App() {
     plugins: [...jssPreset().plugins, rtl()],
   });
 
-  // Cache for the rtl
-  useMemo(() => {
-    const cacheRtl = createCache({
-      key: "rtl",
-      prepend: true,
-      stylisPlugins: [rtlPlugin],
-    });
+  // // Cache for the rtl
+  // useMemo(() => {
+  //   const cacheRtl = createCache({
+  //     key: "rtl",
+  //     prepend: true,
+  //     stylisPlugins: [rtlPlugin],
+  //   });
 
-    setRtlCache(cacheRtl);
-  }, []);
+  //   setRtlCache(cacheRtl);
+  // }, []);
 
   // Change the openConfigurator state
   const handleConfiguratorOpen = () => {

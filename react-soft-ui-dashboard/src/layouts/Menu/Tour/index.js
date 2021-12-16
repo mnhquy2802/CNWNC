@@ -14,6 +14,7 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
+/* eslint-disable */
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 
@@ -42,6 +43,27 @@ import TourApi from "../../../api/tour";
 // import { useEffect, useState } from "react";
 // import AuthApi from "api/auth";
 
+const data = [
+  {
+    id: "1",
+    _username: "Admin",
+    _status: "1",
+    descrition: "admin",
+  },
+  {
+    id: "2",
+    _username: "ABC",
+    _status: "1",
+    descrition: "super admin",
+  },
+  {
+    id: "3",
+    _username: "ABC",
+    _status: "1",
+    descrition: "user",
+  },
+];
+
 function Tour() {
   const [tourname, setTourname] = useState("Input name tour");
   const [error, setError] = useState("");
@@ -57,27 +79,27 @@ function Tour() {
   };
 
   const register = async (event) => {
-    if (event) {
-      event.preventDefault();
-    }
-    if (tourname === "") {
-      return setError("You must enter your username.");
-    }
-    try {
-      const obj = {
-        tourname: tourname,
-        description: description,
-      };
-      console.log("create tour ---------- ", obj);
-      let response = await TourApi.CreateTour(obj);
-      console.log(response.data);
-      if (response.data && response.data.status_code === 400) {
-        return setError(response.data.msg);
-      }
-      return history.push("/author");
-    } catch (err) {
-      console.log(err);
-    }
+    // if (event) {
+    //   event.preventDefault();
+    // }
+    // if (tourname === "") {
+    //   return setError("You must enter your username.");
+    // }
+    // try {
+    //   const obj = {
+    //     tourname: tourname,
+    //     description: description,
+    //   };
+    //   console.log("create tour ---------- ", obj);
+    //   let response = await TourApi.CreateTour(obj);
+    //   console.log(response.data);
+    //   if (response.data && response.data.status_code === 400) {
+    //     return setError(response.data.msg);
+    //   }
+    //   return history.push("/author");
+    // } catch (err) {
+    //   console.log(err);
+    // }
   };
 
   const classes = styles();
@@ -88,36 +110,34 @@ function Tour() {
   // };
 
   const button_create = () => {
-    var role = localStorage.getItem("role");
-    role = JSON.parse(role);
-    role = Object.entries(role);
-    console.log("role at tour: ---> ", role);
-    var tourRole = null;
-
-    role.map(([key, value]) => {
-      if (key === "tour") {
-        tourRole = value;
-        return value;
-      }
-    });
-
-    try {
-      tourRole = Object.entries(tourRole);
-      let result = tourRole.map((item) => {
-        if (item[1] === "create") {
-          console.log("have button create");
-          return (
-            <SuiButton variant="text" buttonColor="secondary" onClick={handleClickOpen}>
-              CREATE TOUR
-            </SuiButton>
-          );
-        }
-      });
-      console.log("result : -----> ", result);
-      return result;
-    } catch {
-      return null;
-    }
+    // var role = localStorage.getItem("role");
+    // role = JSON.parse(role);
+    // role = Object.entries(role);
+    // console.log("role at tour: ---> ", role);
+    // var tourRole = null;
+    // role.map(([key, value]) => {
+    //   if (key === "tour") {
+    //     tourRole = value;
+    //     return value;
+    //   }
+    // });
+    // try {
+    //   tourRole = Object.entries(tourRole);
+    //   let result = tourRole.map((item) => {
+    //     if (item[1] === "create") {
+    //       console.log("have button create");
+    //       return (
+    //         <SuiButton variant="text" buttonColor="secondary" onClick={handleClickOpen}>
+    //           CREATE TOUR
+    //         </SuiButton>
+    //       );
+    //     }
+    //   });
+    //   console.log("result : -----> ", result);
+    //   return result;
+    // } catch {
+    //   return null;
+    // }
   };
 
   return (

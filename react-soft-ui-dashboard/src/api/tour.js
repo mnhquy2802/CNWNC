@@ -30,6 +30,6 @@ class TourApi {
   };
 }
 
-let base = "http://localhost:8088";
+let base = "http://7cbe-14-177-203-51.ngrok.io";
 
 export default TourApi;

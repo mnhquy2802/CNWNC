@@ -2,7 +2,7 @@ import axios from "./index";
 
 class AuthApi {
   static Login = (data) => {
-    return axios.post(`${base}/login`, data);
+    return axios.post(`${base}/api/v1/auth/login`, data);
   };
 
   static Register = (data) => {
@@ -33,6 +33,6 @@ class AuthApi {
   };
 }
 
-let base = "http://localhost:8088";
+let base = "https://api.stg.mayno.vn";
 
 export default AuthApi;
